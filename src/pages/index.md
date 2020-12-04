@@ -1,5 +1,5 @@
 ---
-title: A Bright Nature of Decision
+title: Home Page
 meta_title: Stackbit Azimuth Theme
 meta_description: The preview of the Azimuth theme
 sections:
