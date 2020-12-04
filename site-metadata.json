@@ -4,7 +4,7 @@
     "header": {
         "type": "header",
         "logo_img": "images/logo.png",
-        "has_nav": false,
+        "has_nav": true,
         "nav_links": [
             {
                 "type": "action",
