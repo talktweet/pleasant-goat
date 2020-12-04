@@ -1,0 +1,1170 @@
+backend:
+  name: git-gateway
+  branch: preview
+media_folder: static/images
+public_folder: /images
+collections:
+  - name: config
+    label: Site Configuration
+    files:
+      - name: config
+        label: Site Configuration
+        file: site-metadata.json
+        fields:
+          - widget: string
+            name: title
+            label: Title
+            required: true
+            hint: Site title
+          - widget: string
+            name: domain
+            label: Domain
+            required: false
+            hint: >-
+              The domain of your site, including the protocol, e.g.
+              https://mysite.com/
+          - widget: select
+            name: palette
+            label: Color Palette
+            required: false
+            default: blue
+            hint: The color palette of the site
+            options:
+              - blue
+              - purple
+              - green
+              - orange
+          - widget: object
+            name: header
+            label: Header Configuration
+            required: false
+            fields:
+              - widget: image
+                name: logo_img
+                label: Logo
+                required: false
+                hint: >-
+                  The logo image displayed in the header (if no logo added, the
+                  site title is displayed instead)
+              - widget: boolean
+                name: has_nav
+                label: Enable Navigation Menu
+                required: false
+                default: true
+                hint: Display the navigation menu bar in the header
+              - widget: list
+                name: nav_links
+                label: Navigation Menu Links
+                required: false
+                hint: List of navigation links in header
+                fields:
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: true
+                  - widget: string
+                    name: url
+                    label: URL
+                    required: true
+                  - widget: boolean
+                    name: primary
+                    label: Primary
+                    required: false
+                    hint: Use primary color for this action
+                  - widget: boolean
+                    name: new_window
+                    label: Open in new window
+                    required: false
+                    default: false
+                    hint: Should the link open a new tab
+                  - widget: boolean
+                    name: no_follow
+                    label: No follow
+                    required: false
+                    default: false
+                    hint: Add rel="nofollow" attribute to the link
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: header
+          - widget: object
+            name: footer
+            label: Footer Configuration
+            required: false
+            fields:
+              - widget: image
+                name: logo_img
+                label: Logo
+                required: false
+                hint: The logo image displayed in the footer
+              - widget: string
+                name: tagline
+                label: Footer Tagline
+                required: false
+                hint: The tagline displayed in the footer
+              - widget: boolean
+                name: has_nav
+                label: Enable Navigation Menu
+                required: false
+                default: true
+                hint: Display the secondary navigation menu in the footer
+              - widget: string
+                name: nav_title
+                label: Menu Title
+                required: false
+                hint: The title of the secondary menu displayed in the footer
+              - widget: list
+                name: nav_links
+                label: Navigation Menu Links
+                required: false
+                hint: List of navigation links in footer
+                fields:
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: true
+                  - widget: string
+                    name: url
+                    label: URL
+                    required: true
+                  - widget: boolean
+                    name: primary
+                    label: Primary
+                    required: false
+                    hint: Use primary color for this action
+                  - widget: boolean
+                    name: new_window
+                    label: Open in new window
+                    required: false
+                    default: false
+                    hint: Should the link open a new tab
+                  - widget: boolean
+                    name: no_follow
+                    label: No follow
+                    required: false
+                    default: false
+                    hint: Add rel="nofollow" attribute to the link
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - widget: boolean
+                name: has_social
+                label: Enable Social Links
+                required: false
+                default: true
+                hint: Display social links in the footer
+              - widget: string
+                name: social_title
+                label: Social Links Title
+                required: false
+                hint: The title of the social links list displayed in the footer
+              - widget: list
+                name: social_links
+                label: Social Links
+                required: false
+                hint: The list of social links displayed in the footer
+                fields:
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: true
+                  - widget: string
+                    name: url
+                    label: URL
+                    required: true
+                  - widget: boolean
+                    name: primary
+                    label: Primary
+                    required: false
+                    hint: Use primary color for this action
+                  - widget: boolean
+                    name: new_window
+                    label: Open in new window
+                    required: false
+                    default: false
+                    hint: Should the link open a new tab
+                  - widget: boolean
+                    name: no_follow
+                    label: No follow
+                    required: false
+                    default: false
+                    hint: Add rel="nofollow" attribute to the link
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - widget: boolean
+                name: has_subscribe
+                label: Enable Subscribe
+                required: false
+                default: true
+                hint: Display the newsletter subscription form in the footer
+              - widget: string
+                name: subscribe_title
+                label: Subscribe Title
+                required: false
+                hint: The title of the subscribe block displayed in the footer
+              - widget: string
+                name: subscribe_content
+                label: Subscribe Content
+                required: false
+                hint: >-
+                  The text content in the subscribe block displayed in the
+                  footer
+              - widget: string
+                name: content
+                label: Footer Content
+                required: false
+                hint: The copyright text displayed in the footer
+              - widget: list
+                name: links
+                label: Links
+                required: false
+                hint: A list of links displayed in the footer
+                fields:
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: true
+                  - widget: string
+                    name: url
+                    label: URL
+                    required: true
+                  - widget: boolean
+                    name: primary
+                    label: Primary
+                    required: false
+                    hint: Use primary color for this action
+                  - widget: boolean
+                    name: new_window
+                    label: Open in new window
+                    required: false
+                    default: false
+                    hint: Should the link open a new tab
+                  - widget: boolean
+                    name: no_follow
+                    label: No follow
+                    required: false
+                    default: false
+                    hint: Add rel="nofollow" attribute to the link
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: footer
+  - name: person
+    label: Persons
+    folder: src/data/authors
+    create: true
+    extension: yaml
+    identifier_field: first_name
+    slug: '{{slug}}'
+    summary: '{{first_name}}'
+    fields:
+      - widget: string
+        name: first_name
+        label: First Name
+        required: false
+      - widget: string
+        name: last_name
+        label: Last Name
+        required: false
+      - widget: markdown
+        name: bio
+        label: Bio
+        required: false
+      - widget: image
+        name: photo
+        label: Photo
+        required: false
+      - widget: hidden
+        name: type
+        label: Object Type
+        required: true
+        hint: The type of the object
+        default: person
+  - name: landing
+    label: Landing Pages
+    folder: src/pages
+    create: true
+    extension: md
+    identifier_field: title
+    slug: '{{slug}}'
+    summary: '{{title}}'
+    fields:
+      - widget: string
+        name: title
+        label: Title
+        required: true
+        hint: The title of the page
+      - widget: string
+        name: meta_title
+        label: Meta Title
+        required: false
+        hint: The meta title of the page (recommended length is 50–60 characters)
+      - widget: string
+        name: meta_description
+        label: Meta Description
+        required: false
+        hint: >-
+          The meta description of the page (recommended length is 50–160
+          characters)
+      - widget: string
+        name: canonical_url
+        label: Canonical URL
+        required: false
+        hint: The canonical url of the page
+      - widget: boolean
+        name: no_index
+        label: No Index
+        required: false
+        default: false
+        hint: Tell search engines not to index this page
+      - widget: list
+        name: sections
+        label: Sections
+        required: false
+        hint: Page sections
+        types:
+          - name: section_content
+            widget: object
+            label: Content Section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: section_id
+                label: Element ID
+                required: false
+                hint: >-
+                  Element ID can be used in links to scroll the page to this
+                  section when link clicked
+              - widget: markdown
+                name: content
+                label: Content
+                required: false
+                hint: The text content of the section
+              - widget: image
+                name: image
+                label: Image
+                required: false
+                hint: The image of the section
+              - widget: string
+                name: image_alt
+                label: Image Alt Text
+                required: false
+                hint: The alt text of the section image
+              - widget: select
+                name: background
+                label: Background
+                required: false
+                default: gray
+                hint: The background of the section
+                options:
+                  - gray
+                  - white
+              - widget: list
+                name: actions
+                label: Action Buttons
+                required: false
+                fields:
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: true
+                  - widget: string
+                    name: url
+                    label: URL
+                    required: true
+                  - widget: boolean
+                    name: primary
+                    label: Primary
+                    required: false
+                    hint: Use primary color for this action
+                  - widget: boolean
+                    name: new_window
+                    label: Open in new window
+                    required: false
+                    default: false
+                    hint: Should the link open a new tab
+                  - widget: boolean
+                    name: no_follow
+                    label: No follow
+                    required: false
+                    default: false
+                    hint: Add rel="nofollow" attribute to the link
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: section_content
+          - name: section_cta
+            widget: object
+            label: Call to Action Section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: section_id
+                label: Element ID
+                required: false
+                hint: >-
+                  Element ID can be used in links to scroll the page to this
+                  section when link clicked
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section
+              - widget: list
+                name: actions
+                label: Action Buttons
+                required: false
+                fields:
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: true
+                  - widget: string
+                    name: url
+                    label: URL
+                    required: true
+                  - widget: boolean
+                    name: primary
+                    label: Primary
+                    required: false
+                    hint: Use primary color for this action
+                  - widget: boolean
+                    name: new_window
+                    label: Open in new window
+                    required: false
+                    default: false
+                    hint: Should the link open a new tab
+                  - widget: boolean
+                    name: no_follow
+                    label: No follow
+                    required: false
+                    default: false
+                    hint: Add rel="nofollow" attribute to the link
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: section_cta
+          - name: section_faq
+            widget: object
+            label: FAQ Section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: section_id
+                label: Element ID
+                required: false
+                hint: >-
+                  Element ID can be used in links to scroll the page to this
+                  section when link clicked
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section
+              - widget: select
+                name: background
+                label: Background
+                required: false
+                default: gray
+                hint: The background of the section
+                options:
+                  - gray
+                  - white
+              - widget: list
+                name: faq_items
+                label: FAQ Items
+                required: false
+                fields:
+                  - widget: text
+                    name: question
+                    label: Question
+                    required: false
+                  - widget: markdown
+                    name: answer
+                    label: Answer
+                    required: false
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: faq_item
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: section_faq
+          - name: section_features
+            widget: object
+            label: Features Section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: section_id
+                label: Element ID
+                required: false
+                hint: >-
+                  Element ID can be used in links to scroll the page to this
+                  section when link clicked
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section
+              - widget: select
+                name: background
+                label: Background
+                required: false
+                default: gray
+                hint: The background of the section
+                options:
+                  - gray
+                  - white
+              - widget: list
+                name: features
+                label: Features
+                required: false
+                fields:
+                  - widget: string
+                    name: title
+                    label: Title
+                    required: false
+                  - widget: markdown
+                    name: content
+                    label: Content
+                    required: false
+                    hint: Feature description
+                  - widget: image
+                    name: image
+                    label: Image
+                    required: false
+                    hint: Feature image
+                  - widget: string
+                    name: image_alt
+                    label: Image Alt Text
+                    required: false
+                    hint: The alt text of the feature image
+                  - widget: list
+                    name: actions
+                    label: Action Buttons
+                    required: false
+                    fields:
+                      - widget: string
+                        name: label
+                        label: Label
+                        required: true
+                      - widget: string
+                        name: url
+                        label: URL
+                        required: true
+                      - widget: boolean
+                        name: primary
+                        label: Primary
+                        required: false
+                        hint: Use primary color for this action
+                      - widget: boolean
+                        name: new_window
+                        label: Open in new window
+                        required: false
+                        default: false
+                        hint: Should the link open a new tab
+                      - widget: boolean
+                        name: no_follow
+                        label: No follow
+                        required: false
+                        default: false
+                        hint: Add rel="nofollow" attribute to the link
+                      - widget: hidden
+                        name: type
+                        label: Object Type
+                        required: true
+                        hint: The type of the object
+                        default: action
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: feature_item
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: section_features
+          - name: section_hero
+            widget: object
+            label: Hero Section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: section_id
+                label: Element ID
+                required: false
+                hint: >-
+                  Element ID can be used in links to scroll the page to this
+                  section when link clicked
+              - widget: markdown
+                name: content
+                label: Content
+                required: false
+                hint: The text content of the section
+              - widget: image
+                name: image
+                label: Image
+                required: false
+                hint: The image of the section
+              - widget: string
+                name: image_alt
+                label: Image Alt Text
+                required: false
+                hint: The alt text of the section image
+              - widget: list
+                name: actions
+                label: Action Buttons
+                required: false
+                fields:
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: true
+                  - widget: string
+                    name: url
+                    label: URL
+                    required: true
+                  - widget: boolean
+                    name: primary
+                    label: Primary
+                    required: false
+                    hint: Use primary color for this action
+                  - widget: boolean
+                    name: new_window
+                    label: Open in new window
+                    required: false
+                    default: false
+                    hint: Should the link open a new tab
+                  - widget: boolean
+                    name: no_follow
+                    label: No follow
+                    required: false
+                    default: false
+                    hint: Add rel="nofollow" attribute to the link
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: section_hero
+          - name: section_posts
+            widget: object
+            label: Posts List
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: section_id
+                label: Element ID
+                required: false
+                hint: >-
+                  Element ID can be used in links to scroll the page to this
+                  section when link clicked
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section
+              - widget: select
+                name: background
+                label: Background
+                required: false
+                default: gray
+                hint: The background of the section
+                options:
+                  - gray
+                  - white
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: section_posts
+          - name: section_pricing
+            widget: object
+            label: Pricing Section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: section_id
+                label: Element ID
+                required: false
+                hint: >-
+                  Element ID can be used in links to scroll the page to this
+                  section when link clicked
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section
+              - widget: select
+                name: background
+                label: Background
+                required: false
+                default: gray
+                hint: The background of the section
+                options:
+                  - gray
+                  - white
+              - widget: list
+                name: pricing_plans
+                label: Pricing Plans
+                required: false
+                fields:
+                  - widget: string
+                    name: title
+                    label: Title
+                    required: false
+                  - widget: string
+                    name: price
+                    label: Price
+                    required: false
+                  - widget: markdown
+                    name: details
+                    label: Details
+                    required: false
+                  - widget: boolean
+                    name: highlight
+                    label: Highlight
+                    required: false
+                    default: false
+                    hint: Make the plan stand out by adding a distinctive style
+                  - widget: list
+                    name: actions
+                    label: Action Buttons
+                    required: false
+                    fields:
+                      - widget: string
+                        name: label
+                        label: Label
+                        required: true
+                      - widget: string
+                        name: url
+                        label: URL
+                        required: true
+                      - widget: boolean
+                        name: primary
+                        label: Primary
+                        required: false
+                        hint: Use primary color for this action
+                      - widget: boolean
+                        name: new_window
+                        label: Open in new window
+                        required: false
+                        default: false
+                        hint: Should the link open a new tab
+                      - widget: boolean
+                        name: no_follow
+                        label: No follow
+                        required: false
+                        default: false
+                        hint: Add rel="nofollow" attribute to the link
+                      - widget: hidden
+                        name: type
+                        label: Object Type
+                        required: true
+                        hint: The type of the object
+                        default: action
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: pricing_plan
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: section_pricing
+          - name: section_reviews
+            widget: object
+            label: Reviews Section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: section_id
+                label: Element ID
+                required: false
+                hint: >-
+                  Element ID can be used in links to scroll the page to this
+                  section when link clicked
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section
+              - widget: select
+                name: background
+                label: Background
+                required: false
+                default: gray
+                hint: The background of the section
+                options:
+                  - gray
+                  - white
+              - widget: list
+                name: reviews
+                label: Reviews
+                required: false
+                fields:
+                  - widget: string
+                    name: author
+                    label: Author
+                    required: false
+                  - widget: image
+                    name: avatar
+                    label: Avatar
+                    required: false
+                  - widget: text
+                    name: content
+                    label: Content
+                    required: false
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: review_item
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: section_reviews
+          - name: section_contact
+            widget: object
+            label: Contact Section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: section_id
+                label: Element ID
+                required: false
+                hint: >-
+                  Element ID can be used in links to scroll the page to this
+                  section when link clicked
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The text shown below the title
+              - widget: markdown
+                name: content
+                label: Content
+                required: false
+                hint: 'Section content, appears before contact form'
+              - widget: select
+                name: background
+                label: Background
+                required: false
+                default: gray
+                hint: The background of the section
+                options:
+                  - gray
+                  - white
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: section_contact
+      - widget: hidden
+        name: template
+        label: Template
+        required: true
+        default: landing
+    filter:
+      field: template
+      value: landing
+  - name: blog
+    label: Blog
+    files:
+      - name: blog
+        label: Blog
+        file: src/pages/blog/index.md
+        fields:
+          - widget: string
+            name: title
+            label: Title
+            required: true
+            hint: The title of the page
+          - widget: string
+            name: meta_title
+            label: Meta Title
+            required: false
+            hint: >-
+              The meta title of the page (recommended length is 50–60
+              characters)
+          - widget: string
+            name: meta_description
+            label: Meta Description
+            required: false
+            hint: >-
+              The meta description of the page (recommended length is 50–160
+              characters)
+          - widget: string
+            name: canonical_url
+            label: Canonical URL
+            required: false
+            hint: The canonical url of the page
+          - widget: boolean
+            name: no_index
+            label: No Index
+            required: false
+            default: false
+            hint: Tell search engines not to index this page
+          - widget: hidden
+            name: template
+            label: Template
+            required: true
+            default: blog
+  - name: page
+    label: Pages
+    folder: src/pages
+    create: true
+    extension: md
+    identifier_field: title
+    slug: '{{slug}}'
+    summary: '{{title}}'
+    fields:
+      - widget: string
+        name: title
+        label: Title
+        required: true
+        hint: The title of the page
+      - widget: string
+        name: subtitle
+        label: Subtitle
+        required: false
+        hint: The text shown below the page title
+      - widget: image
+        name: image
+        label: Image
+        required: false
+        hint: The image shown below the page title
+      - widget: string
+        name: image_alt
+        label: Image Alt Text
+        required: false
+        hint: The alt text of the image
+      - widget: string
+        name: meta_title
+        label: Meta title
+        required: false
+        hint: The meta title of the page (recommended length is 50–60 characters)
+      - widget: string
+        name: meta_description
+        label: Meta description
+        required: false
+        hint: >-
+          The meta description of the page (recommended length is 50–160
+          characters)
+      - widget: string
+        name: canonical_url
+        label: Canonical URL
+        required: false
+        hint: The canonical url of the page
+      - widget: boolean
+        name: no_index
+        label: No Index
+        required: false
+        default: false
+        hint: Tell search engines not to index this page
+      - widget: hidden
+        name: template
+        label: Template
+        required: true
+        default: page
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
+    filter:
+      field: template
+      value: page
+  - name: post
+    label: Posts
+    folder: src/pages/blog
+    create: true
+    extension: md
+    identifier_field: title
+    slug: '{{slug}}'
+    summary: '{{title}}'
+    fields:
+      - widget: string
+        name: title
+        label: Title
+        required: true
+        hint: The title of the post
+      - widget: string
+        name: subtitle
+        label: Subtitle
+        required: false
+        hint: The text shown just below the title or the featured image
+      - widget: date
+        name: date
+        label: Date
+        required: true
+      - widget: relation
+        name: author
+        label: Author
+        required: false
+        hint: Post author
+        collection: person
+        valueField: 'src/data/authors/{{slug}}.yaml'
+        searchFields:
+          - first_name
+        displayFields:
+          - first_name
+      - widget: string
+        name: excerpt
+        label: Excerpt
+        required: false
+        hint: The excerpt of the post displayed in the blog feed
+      - widget: image
+        name: image
+        label: Featured Image
+        required: false
+        hint: The image shown below the title
+      - widget: string
+        name: image_alt
+        label: Featured Image Alt Text
+        required: false
+        hint: The alt text of the featured image
+      - widget: image
+        name: thumb_image
+        label: Blog Feed Image
+        required: false
+        hint: The image shown in the blog feed
+      - widget: string
+        name: thumb_image_alt
+        label: Blog Feed Image Alt Text
+        required: false
+        hint: The alt text of the blog feed image
+      - widget: string
+        name: meta_title
+        label: Meta title
+        required: false
+        hint: The meta title of the post (recommended length is 50–60 characters)
+      - widget: string
+        name: meta_description
+        label: Meta description
+        required: false
+        hint: >-
+          The meta description of the post (recommended length is 50–160
+          characters)
+      - widget: string
+        name: canonical_url
+        label: Canonical URL
+        required: false
+        hint: The canonical url of the post
+      - widget: boolean
+        name: no_index
+        label: No Index
+        required: false
+        default: false
+        hint: Tell search engines not to index this post
+      - widget: hidden
+        name: template
+        label: Template
+        required: true
+        default: post
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
+    filter:
+      field: template
+      value: post

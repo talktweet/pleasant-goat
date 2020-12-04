@@ -1,0 +1,100 @@
+{
+    "title": "Azimuth",
+    "palette": "blue",
+    "header": {
+        "type": "header",
+        "logo_img": "images/logo.png",
+        "has_nav": true,
+        "nav_links": [
+            {
+                "type": "action",
+                "label": "Home",
+                "url": "/"
+            },
+            {
+                "type": "action",
+                "label": "Features",
+                "url": "/features"
+            },
+            {
+                "type": "action",
+                "label": "Pricing",
+                "url": "/pricing"
+            },
+            {
+                "type": "action",
+                "label": "Style Guide",
+                "url": "/style-guide"
+            },
+            {
+                "type": "action",
+                "label": "Sign Up",
+                "url": "/signup",
+                "primary": true
+            }
+        ]
+    },
+    "footer": {
+        "type": "footer",
+        "logo_img": "images/logo_alt.png",
+        "tagline": "SaaS theme by Stackbit",
+        "has_nav": true,
+        "nav_title": "Company",
+        "nav_links": [
+            {
+                "type": "action",
+                "label": "About Us",
+                "url": "/about"
+            },
+            {
+                "type": "action",
+                "label": "Blog",
+                "url": "/blog"
+            },
+            {
+                "type": "action",
+                "label": "Sign Up",
+                "url": "signup"
+            },
+            {
+                "type": "action",
+                "label": "Contact",
+                "url": "/contact"
+            }
+        ],
+        "has_social": true,
+        "social_title": "Community",
+        "social_links": [
+            {
+                "type": "action",
+                "label": "Twitter",
+                "url": "https://twitter.com/",
+                "new_window": true
+            },
+            {
+                "type": "action",
+                "label": "Instagram",
+                "url": "https://www.instagram.com/",
+                "new_window": true
+            },
+            {
+                "type": "action",
+                "label": "LinkedIn",
+                "url": "https://www.linkedin.com/",
+                "new_window": true
+            }
+        ],
+        "has_subscribe": true,
+        "subscribe_title": "Subscribe",
+        "subscribe_content": "Stay up to date with our latest developments.",
+        "content": "&copy; Stackbit. All rights reserved.",
+        "links": [
+            {
+                "type": "action",
+                "label": "Made with Stackbit",
+                "url": "https://www.stackbit.com",
+                "new_window": true
+            }
+        ]
+    }
+}
