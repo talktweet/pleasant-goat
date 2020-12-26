@@ -13,7 +13,7 @@
             },
             {
                 "label": "Features",
-                "url": "lorem-ipsum",
+                "url": "/features",
                 "primary": false,
                 "new_window": false,
                 "no_follow": false,
