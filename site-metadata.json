@@ -12,6 +12,14 @@
                 "url": "/"
             },
             {
+                "label": "lorem-ipsum",
+                "url": "lorem-ipsum",
+                "primary": false,
+                "new_window": false,
+                "no_follow": false,
+                "type": "action"
+            },
+            {
                 "type": "action",
                 "label": "About",
                 "url": "/about"
@@ -31,14 +39,6 @@
                 "label": "Sign Up",
                 "url": "/signup",
                 "primary": true
-            },
-            {
-                "label": "lorem-ipsum",
-                "url": "lorem-ipsum",
-                "primary": false,
-                "new_window": false,
-                "no_follow": false,
-                "type": "action"
             }
         ]
     },
